@@ -1,0 +1,12 @@
+IndexIgnore *
+ErrorDocument 404 /assets/php/404.php
+ErrorDocument 403 /assets/php/403.php
+
+RewriteEngine on
+
+RewriteCond $1 !^(index\.php|assets|user_guide|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]
+
+<FilesMatch "\.(ico|jpg|jpeg|png|gif)$">
+Header set Cache-Control "max-age=290304000, public"
+</FilesMatch>
