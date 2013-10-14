@@ -1,0 +1,27 @@
+html{
+	overflow-y: scroll; 
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+#level{
+	min-height: 350px;
+}
+
+#home-bg{
+	color: #FFF;
+}
+
+div.space{
+	height: 30px;
+}
+
+#clueless-logo{
+	width:182px;
+	height: 28px;
+	margin-top: 12px;
+	background: url('/assets/img/logo.png');
+	background-repeat: no-repeat;
+}
