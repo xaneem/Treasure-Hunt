@@ -23,8 +23,11 @@ Know the Developer and Statistics:
 This code and the associated web pages were developed and maintained by Saneem. The hunt was held between October 3, 2013 to October 17, 2013. It had 4500+ users and a total of 300,000+ answer tries. You can view it live at http://clueless.tathva.org.
 
 If you have any questions, or anything to talk about, feel free to get in touch :)
+
 Facebook: https://www.facebook.com/xaneem
+
 Twitter: https://www.twitter.com/xaneem
+
 LinkedIn: https://www.linkedin.com/in/xaneem
 
 How to Setup
