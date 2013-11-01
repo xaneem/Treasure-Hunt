@@ -26,7 +26,6 @@ If you have any questions, or anything to talk about, feel free to get in touch 
 
 Facebook: https://www.facebook.com/xaneem
 Twitter: https://www.twitter.com/xaneem
-LinkedIn: https://www.linkedin.com/in/xaneem
 
 How to Setup
 ============
