@@ -9,7 +9,8 @@ Features:
 * Implements good security - session encryption, mySQL safety features, etc. Level answers are encrypted (md5) in the database. No passwords are stored as only Facebook login is being used.
 * Logs for answer tries, with user details and IP address.
 * Admin interface for all user details, level upload, and to view answer log for each user.
-* Leaderboard, Winners and Rules pages (manual update)
+* Leaderboard
+* Winners and Rules pages (manual update)
 
 Technical Specs:
 * Bootstrap 3.0
