@@ -35,9 +35,9 @@ How to Setup
 1. This project runs on CodeIgniter. Download it first: http://ellislab.com/codeigniter
 2. Extract the CodeIgniter files to your server folder, and copy (replace if already exists) all files from this repository to the same folder.
 3. In the /config folder,
-	a. In config.php, enter your "base_url" and "encryption_key", if you intent to change it.
-	b. In database.php, fill up hostname, username, password and database name.
-	c. In facebook.php, enter our appId and app secret.
+  a. In config.php, enter your "base_url" and "encryption_key", if you intent to change it.
+  b. In database.php, fill up hostname, username, password and database name.
+  c. In facebook.php, enter our appId and app secret.
 4. In your phpMyAdmin, create a new database (with the name you entered in config.php), and import the tables.sql file.
 5. Your installation should now be ready. To make yourself an admin, first log-in using Facebook, and in the "users" table, change your role to a number >1 (say, 10).
 6. Let me know if you face any problems.
