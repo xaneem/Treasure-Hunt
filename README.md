@@ -28,6 +28,7 @@ Facebook: https://www.facebook.com/xaneem
 
 Twitter: https://www.twitter.com/xaneem
 
+
 How to Setup
 ============
 1. This project runs on CodeIgniter. Download it first: http://ellislab.com/codeigniter
@@ -39,3 +40,12 @@ How to Setup
 4. In your phpMyAdmin, create a new database (with the name you entered in config.php), and import the tables.sql file.
 5. Your installation should now be ready. To make yourself an admin, first log-in using Facebook, and in the "users" table, change your role to a number >1 (say, 10).
 6. Let me know if you face any problems.
+
+License
+=======
+This project is licensed under GNU GENERAL PUBLIC LICENSE Version 2.
+You're free to use this project for any purpose, but you
+SHOULD provide the source code of any derivation freely available,
+along with the proper attribution to the original project creator.
+
+See the file LICENSE.
