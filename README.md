@@ -37,7 +37,7 @@ How to Setup
 3. In the /config folder,
   1. In config.php, enter your "base_url" and "encryption_key", if you intent to change it.
   2. In database.php, fill up hostname, username, password and database name.
-  3. In facebook.php, enter our appId and app secret.
+  3. In facebook.php, enter your appId and app secret. (Get it from developers.facebook.com/apps)
 4. In your phpMyAdmin, create a new database (with the name you entered in config.php), and import the tables.sql file.
 5. Your installation should now be ready. To make yourself an admin, first log-in using Facebook, and in the "users" table, change your role to a number >1 (say, 10).
 6. Let me know if you face any problems.
