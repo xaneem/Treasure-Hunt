@@ -15,7 +15,7 @@ class status_model extends CI_Model {
 		$rank = 1;
 		
 		$sql = "SELECT fb_name, level, college, role FROM users ORDER BY level DESC, passtime ASC"; 
-		$query = $this->db->query($sql,$start*50);
+		$query = $this->db->query($sql);
 		if ($query->num_rows() > 0)
 		{
 			foreach ($query->result() as $row)
