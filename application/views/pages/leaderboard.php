@@ -12,8 +12,6 @@
 				$list.="<td>".$row['level']."</td>";
 				$list.="<td>".$row['college']."</td>";
 				$list.="</tr>";
-			}
-
 		}
 
 		?>
