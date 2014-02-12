@@ -3,9 +3,17 @@ ErrorDocument 404 /assets/php/404.php
 ErrorDocument 403 /assets/php/403.php
 
 RewriteEngine on
+RewriteBase /
 
-RewriteCond $1 !^(index\.php|assets|user_guide|robots\.txt)
-RewriteRule ^(.*)$ /index.php/$1 [L]
+#These are the original rewrites, but might cause problems with some server configs.
+#RewriteCond $1 !^(index\.php|assets|user_guide|robots\.txt)
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+
+#These conditions are tested to work, and should be a better alternative to the commented ones above.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
+  
 
 <FilesMatch "\.(ico|jpg|jpeg|png|gif)$">
 Header set Cache-Control "max-age=290304000, public"
