@@ -122,9 +122,9 @@ class Home extends CI_Controller {
 
 			//Enter details into database
 			$signup = $this->user_model->signup(array(
-				'college' => $this->input->post('college'),
-				'mobile' => $this->input->post('mobile'),
-				'email' => $this->input->post('email')
+				'college' => strip_tags($this->input->post('college')),
+				'mobile' => strip_tags($this->input->post('mobile')),
+				'email' => strip_tags($this->input->post('email'))
 			));
 
 			if($signup){
