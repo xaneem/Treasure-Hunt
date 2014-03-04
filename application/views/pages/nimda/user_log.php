@@ -34,7 +34,7 @@
 							echo "<tr>";
 								echo "<td>$i</td>";
 								echo "<td>".$row['level']."</td>";
-								echo "<td>".$row['answer']."</td>";
+								echo "<td>".htmlspecialchars($row['answer'])."</td>";
 								echo "<td>".$row['timestamp']."</td>";
 								echo "<td>".$row['ip']."</td>";
 							echo "</tr>";
