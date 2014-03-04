@@ -12,15 +12,15 @@
 				</tr>
 				<tr>
 					<td>College</td>
-					<td class="text-info"><?=$user['college']?></td>
+					<td class="text-info"><?=htmlspecialchars($user['college'])?></td>
 				</tr>
 				<tr>
 					<td>E-mail</td>
-					<td class="text-info"><?=$user['email']?></td>
+					<td class="text-info"><?=htmlspecialchars($user['email'])?></td>
 				</tr>
 				<tr>
 					<td>Mobile</td>
-					<td class="text-info"><?=$user['mobile']?></td>
+					<td class="text-info"><?=htmlspecialchars($user['mobile'])?></td>
 				</tr>
 			</tbody>
 		</table>
