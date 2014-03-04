@@ -7,10 +7,10 @@
 
 		foreach($leaderboard as $row){
 				$list.="<tr>";
-				$list.="<td>".$row['rank']."</td>";
-				$list.="<td>".$row['fb_name']."</td>";
-				$list.="<td>".$row['level']."</td>";
-				$list.="<td>".$row['college']."</td>";
+				$list.="<td>".htmlspecialchars($row['rank'])."</td>";
+				$list.="<td>".htmlspecialchars($row['fb_name'])."</td>";
+				$list.="<td>".htmlspecialchars($row['level'])."</td>";
+				$list.="<td>".htmlspecialchars($row['college'])."</td>";
 				$list.="</tr>";
 		}
 
