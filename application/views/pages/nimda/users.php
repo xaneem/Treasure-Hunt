@@ -39,9 +39,9 @@
 							echo "<td>".$row['fb_name']."</td>";
 							echo "<td>".$row['rank']."</td>";
 							echo "<td>".$row['level']."</td>";
-							echo "<td>".$row['mobile']."</td>";
-							echo "<td>".$row['email']."</td>";
-							echo "<td>".$row['college']."</td>";
+							echo "<td>".htmlspecialchars($row['mobile'])."</td>";
+							echo "<td>".htmlspecialchars($row['email'])."</td>";
+							echo "<td>".htmlspecialchars($row['college'])."</td>";
 							echo "<td>".$row['role']."</td>";
 						echo "</tr>";
 					}
