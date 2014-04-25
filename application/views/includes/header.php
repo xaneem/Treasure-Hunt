@@ -3,17 +3,16 @@ Project Details
 ===============
 Project Creator: Saneem Perinkadakkat
 Twitter: @xaneem
-Facebook: http://www.facebook.com/xaneem
+
 GitHub: https://github.com/xaneem/Treasure-Hunt/
 
 This project was originally created for Clueless 2013, an online treasure
 hunt conducted as a part of Tathva 2013, the annual techno-management festival of
 NIT Calicut.
 
-You're free to use this code for any project, but you should follow the license given below.
+If you have made improvements that you think could help the community, do make a pull request :)
 
-If you need any help with the code, or details about how to install it, feel free
-to ping me on Facebook or Twitter. Cheers!
+You're free to use this code for any project, but you should follow the license given below.
 
 LICENSE:
 This project is licensed under GNU GENERAL PUBLIC LICENSE Version 2.
