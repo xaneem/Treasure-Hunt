@@ -6,7 +6,9 @@
 	//When level is less than 21, show a Bootstrap alert, and ask user
 	//if he/she wants to jump to Chapter 2.
 
-	if($level->level<21){ ?>
+	if(0 && $level->level<21){ 
+	//Remove the 0 && to activate the level jump feature, to jump to a new chapter
+	?>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="alert alert-block alert-success fade in">
@@ -20,7 +22,9 @@
 			</div>
 		</div>
 	</div>
-	<?php } ?>
+	<?php } 
+	
+	?>
 
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 text-center" id="level">
