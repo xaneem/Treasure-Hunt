@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-lg-4 col-lg-offset-4">
 			<p>Add a new level. Level should be activated separately.</p>
-			<a href="/nimda/levels/add_level" class="btn btn-warning">Add New Level</a>
+			<a href="<?=base_url()?>nimda/levels/add_level" class="btn btn-warning">Add New Level</a>
 			<hr>
 
 			<table class="table table-striped table-hover">
@@ -26,20 +26,26 @@
 						1 => 'btn-danger',
 						0 => 'btn-success');
 
-					foreach($levels as $row){
-						$status = $row['status'];
-						echo "<tr>";
-							echo "<td>".$row['level']."</td>";
-							echo "<td>".$status_readable[$status]."</td>";
-							echo '<td><a href="/nimda/levels/status/?level='.$row['level'].'&now='.$status.'" class="btn '.$button_class[$status].'">'.$button[$status].'</a></td>';
-						echo "</tr>";
+
+					if($levels!=NULL && count($levels)){
+						foreach($levels as $row){
+							$status = $row['status'];
+							echo "<tr>";
+								echo "<td>".$row['level']."</td>";
+								echo "<td>".$status_readable[$status]."</td>";
+								echo '<td><a href="'.base_url().'nimda/levels/status/?level='.$row['level'].'&now='.$status.'" class="btn '.$button_class[$status].'">'.$button[$status].'</a></td>';
+							echo "</tr>";
+						}
 					}
+					
+					
+	
 					?>
 				</tbody>
 			</table>
 
 			<hr>
-			<form class="form-inline" role="form" action="/nimda/levels/set_user" method="post">
+			<form class="form-inline" role="form" action="<?=base_url()?>nimda/levels/set_user" method="post">
 				<div class="form-group">
 				  <input type="text" class="form-control" name="level" placeholder="Enter level to set." value="<?=$current_level?>">
 				</div>
