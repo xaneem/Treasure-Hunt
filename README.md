@@ -23,11 +23,9 @@ Technical Specs:
 Know the Developer and Statistics:
 This code and the associated web pages were developed and maintained by Saneem. The hunt was held between October 3, 2013 to October 17, 2013. It had 4500+ users and a total of 300,000+ answer tries. You can view it live at http://clueless.tathva.org.
 
-If you have any questions, or anything to talk about, feel free to get in touch :)
+You're free to make improvements to the project. Do make a pull request if it could help others :)
 
-Facebook: https://www.facebook.com/xaneem
-
-Twitter: https://www.twitter.com/xaneem
+Twitter: @xaneem
 
 
 How to Setup
@@ -41,6 +39,9 @@ How to Setup
 4. In your phpMyAdmin, create a new database (with the name you entered in config.php), and import the tables.sql file.
 5. Your installation should now be ready. To make yourself an admin, first log-in using Facebook, and in the "users" table, change your role to a number >1 (say, 10).
 6. Let me know if you face any problems.
+
+Note:
+Some hosting providers are seen to cause problems with the Facebook login feature, resulting in a redirect loop. Please make sure it is a problem with the actual code before you open an issue.
 
 License
 =======
