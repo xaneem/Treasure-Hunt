@@ -14,7 +14,7 @@ Features:
 
 Technical Specs:
 * Bootstrap 3.0
-* CodeIgniter 2.1.4
+* CodeIgniter 2.1.4 ([Download here](https://github.com/bcit-ci/CodeIgniter/archive/2.2.2.zip). Newer 3.xx versions not supported yet)
 * Facebook PHP SDK
 * Uses MVC pattern
 * Documented code
@@ -30,7 +30,7 @@ Twitter: @xaneem
 
 How to Setup
 ============
-1. This project runs on CodeIgniter. Download it first: http://ellislab.com/codeigniter
+1. This project runs on CodeIgniter. [Download it here](https://github.com/bcit-ci/CodeIgniter/archive/2.2.2.zip).
 2. Extract the CodeIgniter files to your server folder, and copy (replace if already exists) all files from this repository to the same folder.
 3. In the /config folder,
   1. In config.php, enter your "base_url" and "encryption_key", if you intent to change it.
