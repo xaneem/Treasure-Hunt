@@ -14,7 +14,7 @@ Features:
 
 Technical Specs:
 * Bootstrap 3.0
-* CodeIgniter 2.1.4 ([Download here](https://github.com/bcit-ci/CodeIgniter/archive/2.2.2.zip). Newer 3.xx versions not supported yet)
+* CodeIgniter 2.x ([Download here](https://github.com/bcit-ci/CodeIgniter/archive/2.2.2.zip). Newer 3.x versions not supported yet)
 * Facebook PHP SDK
 * Uses MVC pattern
 * Documented code
@@ -30,7 +30,7 @@ Twitter: @xaneem
 
 How to Setup
 ============
-1. This project runs on CodeIgniter. [Download it here](https://github.com/bcit-ci/CodeIgniter/archive/2.2.2.zip).
+1. This project runs on CodeIgniter 2.x [Download it here](https://github.com/bcit-ci/CodeIgniter/archive/2.2.2.zip).
 2. Extract the CodeIgniter files to your server folder, and copy (replace if already exists) all files from this repository to the same folder.
 3. In the /config folder,
   1. In config.php, enter your "base_url" and "encryption_key", if you intent to change it.
@@ -42,6 +42,9 @@ How to Setup
 
 Note:
 Some hosting providers are seen to cause problems with the Facebook login feature, resulting in a redirect loop. Please make sure it is a problem with the actual code before you open an issue.
+
+Update:
+Facebook has updated the Graph API and there are some breaking changes. This application is not actively maintained, and could need some changes to work correctly. Please feel free to send a pull request if you're working on it.
 
 License
 =======
