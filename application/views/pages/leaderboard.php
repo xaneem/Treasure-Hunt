@@ -5,13 +5,17 @@
 		<?php
 		$list='';
 
-		foreach($leaderboard as $row){
-				$list.="<tr>";
-				$list.="<td>".$row['rank']."</td>";
-				$list.="<td>".$row['fb_name']."</td>";
-				$list.="<td>".$row['level']."</td>";
-				$list.="<td>".htmlspecialchars($row['college'])."</td>";
-				$list.="</tr>";
+		if (!empty($leaderboard)) {
+			foreach($leaderboard as $row){
+					$list.="<tr>";
+					$list.="<td>".$row['rank']."</td>";
+					$list.="<td>".$row['fb_name']."</td>";
+					$list.="<td>".$row['level']."</td>";
+					$list.="<td>".htmlspecialchars($row['college'])."</td>";
+					$list.="</tr>";
+			}
+		} else {
+			$list.="<tr><td colspan='4' class='text-center'>No players yet</td></tr>";
 		}
 
 		?>
