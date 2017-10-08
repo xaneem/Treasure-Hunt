@@ -108,8 +108,12 @@ class Home extends CI_Controller {
 				$this->auth->logout();
 			}
 		}else{
+			$facebook = $this->facebook->instance->getRedirectLoginHelper();
+			$permissions = ['email'];
+			$loginUrl = $facebook->getLoginUrl(base_url().'login', $permissions);
+
 			//redirect to Facebook to authenticate
-			redirect($this->facebook->getLoginURL($this->config->item('facebook_login_parameters'), 'location'));
+			redirect($loginUrl);
 		}
 	}
 	

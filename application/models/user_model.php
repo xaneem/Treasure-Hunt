@@ -15,29 +15,59 @@ class user_model extends CI_Model {
 	
 	function get_user() {
 		//Get user's uid from facebook
+		$data['is_true'] = FALSE;
 
-		$query = NULL;
-		try {
-			$query = $this->facebook->getUser();
-			if(!$query) {
-				//user is not logged in
-				$data['is_true'] = FALSE;
-				return $data;
+		$fb = $this->facebook->instance;
+
+		if (isset($_GET['state']) && isset($_GET['code'])) {
+			$helper = $fb->getRedirectLoginHelper();
+		    $helper->getPersistentDataHandler()->set('state', $_GET['state']);
+
+			try {
+				$accessToken = $helper->getAccessToken();
+			} catch(Facebook\Exceptions\FacebookResponseException $e) {
+				// When Graph returns an error
+				// echo 'Graph returned an error: ' . $e->getMessage();
+				log_message('error', 'get_user in user_model got an exception');
+
+				echo 'An error occured. Please try again.<br>';
+				echo '<a href="'.base_url().'">Home</a>';
+				exit;
+			} catch(Facebook\Exceptions\FacebookSDKException $e) {
+				// When validation fails or other local issues
+				// echo 'Facebook SDK returned an error: ' . $e->getMessage();
+				log_message('error', 'get_user in user_model got an exception');
+
+				echo 'An error occured. Please try again.';
+				echo '<a href="'.base_url().'">Home</a>';
+				exit;
 			}
-		}catch (FacebookApiException $e){
-			//check log folder. log exceptions for debugging.
-			//logging can be changed or disabled in config.php
-			log_message('error', 'get_user in user_model got an exception');
 
-			//some api error occured. user is not logged in.
-			$data['is_true'] = FALSE;
+			if (empty($accessToken)) {
+				log_message('error', 'get_user in user_model got an exception');
+
+				echo 'An error occured. Please try again.';
+				echo '<a href="'.base_url().'">Home</a>';
+				exit;
+			}
+
+			$this->facebook->accessToken = $accessToken;
+			$this->session->set_userdata('accessToken', (string) $accessToken);
+
+			if ($user = $this->facebook->getUser()) {
+				$data['is_true'] = TRUE;
+				$data['facebook_uid'] = $user['id'];
+				return $data;
+			} else {
+				log_message('error', 'get_user in user_model got an exception');
+
+				echo 'An error occured. Please try again.';
+				echo '<a href="'.base_url().'">Home</a>';
+				exit;
+			}
+		} else {
 			return $data;
 		}
-	
-		//If all goes good, return true, with uid
-		$data['is_true'] = TRUE;
-		$data['facebook_uid'] = $query;
-		return $data;
 	}
 
 	function get_user_details(){
@@ -45,22 +75,14 @@ class user_model extends CI_Model {
 		//used to fill in the database initially.
 		$query = NULL;
 
-		try {
-			$query = $this->facebook->api('/me');
-			if(!$query) {
-				return 0;
-			}
-		}catch (FacebookApiException $e){
-			log_message('error', 'get_user_details in user_model got an exception.');
-
-			return 0;
-		}
+		$this->facebook->accessToken = $this->session->userdata('accessToken');
+		$query = $this->facebook->getUser();
 
 		$details = array(
 			'facebook_uid' => $query['id'],
-			'username' => $query['username'],
+			'username' => $query['name'], // Username is no longer available through the API
 			'full_name' => $query['name'],
-			'email' => @$query['email']
+			'email' => !empty($query['email']) ? $query['email'] : ''
 		);
 		return $details;
 	}
@@ -68,17 +90,10 @@ class user_model extends CI_Model {
 	function signed_in(){
 		//check if user is new, or returning
 		//function is called when user has signed in (or signed up)
-		$uid = NULL;
 
-		try {
-			$uid = $this->facebook->getUser();
-			if(!$uid) {
-				return 0;
-			}
-		}catch (FacebookApiException $e){
-			log_message('error', 'signed_in in user_model got an exception');
-			return 0;
-		}
+		$this->facebook->accessToken = $this->session->userdata('accessToken');
+		$user = $this->facebook->getUser();
+		$uid = $user['id'];
 
 		$this->db->from('users');
 		$this->db->where('fb_uid',$uid);
@@ -97,20 +112,11 @@ class user_model extends CI_Model {
 		//user just signed up. request personal information
 		//and add them to our database
 
-		$query = NULL;
-
-		try {
-			$query = $this->facebook->api('/me');
-			if(!$query) {
-				return 0;
-			}
-		}catch (FacebookApiException $e){
-			log_message('error', 'get_user in user_model got an exception');
-			return 0;
-		}
+		$this->facebook->accessToken = $this->session->userdata('accessToken');
+		$query = $this->facebook->getUser();
 
 		$data = array(
-			'fb_name' => $query['username'],
+			'fb_name' => $query['name'],
 			'fb_uid' => $query['id'],
 			'level' => 1,
 			'mobile' => $details['mobile'],
@@ -232,6 +238,13 @@ class user_model extends CI_Model {
 		//Signup posting has not been implemented.
 		//It can be done in the signup() function
 
+		/*
+			This code is not upgraded to the latest API version
+		*/
+
+		return;
+
+		/*
 		$uid = $this->session->userdata('facebook_uid');
 
 		if($uid=='' || $uid==NULL){
@@ -292,6 +305,7 @@ class user_model extends CI_Model {
 		curl_close($ch);
 
 		return;
+		*/
 	}
 
 	function chapter2(){
