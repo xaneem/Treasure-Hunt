@@ -32,7 +32,6 @@ class Auth {
 		//Destroy CI and PHP sessions.
 		//This does not logout the user from Facebook.
 		$this->CI->session->sess_destroy();
-		$this->CI->facebook->destroySession();
 		session_destroy();
 
 		//Redirect to home page.
