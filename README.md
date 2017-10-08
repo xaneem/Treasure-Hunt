@@ -15,6 +15,7 @@ Features:
 Technical Specs:
 * Bootstrap 3.0
 * CodeIgniter 2.x ([Download here](https://github.com/bcit-ci/CodeIgniter/archive/2.2.2.zip). Newer 3.x versions not supported yet)
+* PHP 5.4.0 or newer
 * Facebook PHP SDK
 * Uses MVC pattern
 * Documented code
@@ -40,11 +41,19 @@ How to Setup
 5. Your installation should now be ready. To make yourself an admin, first log-in using Facebook, and in the "users" table, change your role to a number >1 (say, 10).
 6. Let me know if you face any problems.
 
+Setting up the Facebook Login
+=============================
+The Facebook integration code has been updated to work correctly, but there are a lot of improvements possible. Feel free to submit a PR.
+
+- Create a new app at https://developers.facebook.com
+- Click Add Product -> Login with Facebook
+- Click on Facebook Login -> Quick Start (on the left navigation)
+- Select Web, enter URL of your website where you'll host the site and click continue.
+- Click Facebook Login -> Settings (on the left navigation)
+- Add your website URL to 'Valid OAuth redirect URIs' and disable 'Use Strict Mode for Redirect URIs'
+
 Note:
 Some hosting providers are seen to cause problems with the Facebook login feature, resulting in a redirect loop. Please make sure it is a problem with the actual code before you open an issue.
-
-Update:
-Facebook has updated the Graph API and there are some breaking changes. This application is not actively maintained, and could need some changes to work correctly. Please feel free to send a pull request if you're working on it.
 
 License
 =======
